@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Hello world!
+ * Entry point of the application. File operations goes here.
  */
 public class App {
 

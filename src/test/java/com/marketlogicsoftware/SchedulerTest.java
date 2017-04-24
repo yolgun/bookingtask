@@ -12,9 +12,6 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import org.junit.Test;
 
-/**
- * Created by YunusOlgun on 4/24/2017.
- */
 public class SchedulerTest {
 
   private Booking validBooking1 = Booking.fromString("2015-08-17 10:17:06 EMP001", "2015-08-21 09:00 2");

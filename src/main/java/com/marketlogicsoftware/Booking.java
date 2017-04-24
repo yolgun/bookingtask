@@ -6,7 +6,12 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 /**
- * Created by YunusOlgun on 4/24/2017.
+ * Represents Booking model.
+ *
+ * Immutable. Should stay immutable. Scheduler depends on that a Booking instance can't change once it is booked.
+ * Same as any other collection.
+ *
+ * Includes auto generated equals, hashCode, compareTo. If you change equality logic, regenerate all.
  */
 public class Booking implements Comparable<Booking> {
 
@@ -25,6 +30,13 @@ public class Booking implements Comparable<Booking> {
     this.endTime = endTime;
   }
 
+  /**
+   * Static factory method to instantiate Booking class.
+   *
+   * @param bookingLine Example: "2015-08-17 10:17:06 EMP001"
+   * @param scheduleLine Example: "2015-08-21 09:00 2"
+   * @return new instance
+   */
   public static Booking fromString(String bookingLine, String scheduleLine) {
     String[] bookingLineSplitted = bookingLine.split(" ");
     String[] scheduleLineSplitted = scheduleLine.split(" ");

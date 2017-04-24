@@ -4,9 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-/**
- * Created by YunusOlgun on 4/24/2017.
- */
 public class BookingTest {
 
   @Test(expected = IllegalArgumentException.class)

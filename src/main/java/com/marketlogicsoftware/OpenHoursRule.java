@@ -5,9 +5,13 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 /**
- * Created by YunusOlgun on 4/24/2017.
+ * Only bookings in office hours will be accepted.
+ *
+ * Used specification pattern.
+ *
+ * Immutable.
  */
-public class OpenHoursRule implements BookingRule{
+public class OpenHoursRule implements BookingRule {
 
   private static final DateTimeFormatter formatter = DateTimeFormat.forPattern("HHmm");
   private final LocalTime openingTime;
@@ -18,6 +22,11 @@ public class OpenHoursRule implements BookingRule{
     this.closingTime = closingTime;
   }
 
+  /**
+   * Static factory method instantiate OpenHoursRule class
+   *
+   * @param args Example "0900 1730"
+   */
   public static OpenHoursRule fromString(String args) {
     String[] splitted = args.split(" ");
     if (splitted.length == 2) {

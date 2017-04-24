@@ -5,9 +5,6 @@ import static org.junit.Assert.assertEquals;
 import org.joda.time.LocalTime;
 import org.junit.Test;
 
-/**
- * Created by YunusOlgun on 4/24/2017.
- */
 public class OpenHoursRuleTest {
 
   private OpenHoursRule validRule = OpenHoursRule.fromString("0900 1730");

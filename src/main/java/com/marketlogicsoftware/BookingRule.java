@@ -1,8 +1,9 @@
 package com.marketlogicsoftware;
 
 /**
- * Created by YunusOlgun on 4/24/2017.
+ * This class is used to test if a booking is allowed.
  */
 public interface BookingRule {
+
   boolean test(Booking booking);
 }
