@@ -13,11 +13,11 @@ public class App {
 
   public static void main(String[] Args) throws IOException {
     try (BufferedReader reader = new BufferedReader(new FileReader(INPUT_FILE))) {
-      System.out.println(OpenHoursRule.fromString(reader.readLine()));
-      String line1, line2;
-      while ((line1 = reader.readLine()) != null && (line2 = reader.readLine()) != null) {
-        System.out.println(Booking.fromString(line1, line2));
-      }
+      String openHoursLine = reader.readLine();
+      OpenHoursRule openHoursRule = OpenHoursRule.fromString(openHoursLine);
+      Scheduler scheduler = Scheduler.withRules(openHoursRule);
+      scheduler.bookAllInBookingOrder(reader);
+      System.out.println(scheduler.output());
     }
   }
 }
